@@ -9,8 +9,8 @@ import 'package:meals_app/widgets/main_drawer.dart';
 const kInitialFilters = {
   Filter.glutenFree: false,
   Filter.lactoseFree: false,
-  Filter.vegan: false,
   Filter.vegetarian: false,
+  Filter.vegan: false
 };
 
 class TabsScreen extends StatefulWidget {
@@ -62,17 +62,19 @@ class _TabsScreenState extends State<TabsScreen> {
     Navigator.of(context).pop();
 
     if (identifier == 'filters') {
-      final result = Navigator.of(context).push<Map<Filter, bool>>(
+      final result = await Navigator.of(context).push<Map<Filter, bool>>(
         MaterialPageRoute(
-          builder: (cxt) => const FiltersScreen(),
+          builder: (cxt) => FiltersScreen(
+            currentFilters: _selectedFilters,
+          ),
         ),
       );
 
       setState(() {
-        for (final item in result!) {}
+        //for (final item in result!) {}
 
-        _selectedFilters = Future<Map<Filter, bool>?>result ??
-            kInitialFilters; // if result is null, then return kInitalFilters
+        _selectedFilters = result ?? kInitialFilters;
+        // if result is null, then return kInitalFilters
       });
     }
   }
@@ -98,6 +100,7 @@ class _TabsScreenState extends State<TabsScreen> {
 
     Widget activePage = CategoriesScreen(
       onToggleFavorite: _toggleMealFavoritesStatus,
+      availableMeals: availableMeals,
     );
 
     var activePageTitle = 'Categories';
