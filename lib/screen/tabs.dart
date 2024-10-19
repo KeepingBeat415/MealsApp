@@ -93,39 +93,41 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final meals = ref.watch(mealsProvider);
+    // final meals = ref.watch(mealsProvider);
 
-    final activeFilters = ref.watch(filtersProvider);
+    // final activeFilters = ref.watch(filtersProvider);
 
-    final availableMeals = meals.where((meal) {
-      if (activeFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
-        return false;
-      }
-      if (activeFilters[Filter.lactoseFree]! && !meal.isLactoseFree) {
-        return false;
-      }
-      if (activeFilters[Filter.vegetarian]! && !meal.isVegetarian) {
-        return false;
-      }
+    // var availableMeals = meals.where((meal) {
+    //   if (activeFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
+    //     return false;
+    //   }
+    //   if (activeFilters[Filter.lactoseFree]! && !meal.isLactoseFree) {
+    //     return false;
+    //   }
+    //   if (activeFilters[Filter.vegetarian]! && !meal.isVegetarian) {
+    //     return false;
+    //   }
 
-      if (activeFilters[Filter.vegan]! && !meal.isVegan) {
-        return false;
-      }
-      // if (_selectedFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
-      //   return false;
-      // }
-      // if (_selectedFilters[Filter.lactoseFree]! && !meal.isLactoseFree) {
-      //   return false;
-      // }
-      // if (_selectedFilters[Filter.vegetarian]! && !meal.isVegetarian) {
-      //   return false;
-      // }
+    //   if (activeFilters[Filter.vegan]! && !meal.isVegan) {
+    //     return false;
+    //   }
+    //   // if (_selectedFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
+    //   //   return false;
+    //   // }
+    //   // if (_selectedFilters[Filter.lactoseFree]! && !meal.isLactoseFree) {
+    //   //   return false;
+    //   // }
+    //   // if (_selectedFilters[Filter.vegetarian]! && !meal.isVegetarian) {
+    //   //   return false;
+    //   // }
 
-      // if (_selectedFilters[Filter.vegan]! && !meal.isVegan) {
-      //   return false;
-      // }
-      return true;
-    }).toList();
+    //   // if (_selectedFilters[Filter.vegan]! && !meal.isVegan) {
+    //   //   return false;
+    //   // }
+    //   return true;
+    // }).toList();
+
+    var availableMeals = ref.watch(filteredMealsProvider);
 
     Widget activePage = CategoriesScreen(
       //onToggleFavorite: _toggleMealFavoritesStatus,
