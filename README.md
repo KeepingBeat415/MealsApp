@@ -1,16 +1,25 @@
-# meals_app
+# Meals App
 
-A new Flutter project.
+Flutter project:
 
-## Getting Started
+- side bar with filter meals function
+- bottom bar with different screen route
+- able add meals into favorites meal list
+- using provider for passing variable/trigger between widget
+- implicate/explicate animation
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+<p align="center">
+<img src="assets/images/categories_screen.png" alt="Alt text" width="220" height="400">
+<img src="assets/images/sider_bar.png" alt="Alt text" width="220" height="400">
+<img src="assets/images/filter_screen.png" alt="Alt text" width="220" height="400">
+</p>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+<img src="assets/images/meals_screen.png" alt="Alt text" width="220" height="400">
+<img src="assets/images/meal_detail.png" alt="Alt text" width="220" height="400">
+<img src="assets/images/favorites_screen.png" alt="Alt text" width="220" height="400">
+</p>
